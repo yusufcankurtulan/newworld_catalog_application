@@ -46,6 +46,16 @@ Products are fetched dynamically from an API and displayed in a smooth, card-bas
 
 ---
 
+## 🧰 Technology Stack
+
+- **Flutter 3.41.2** – Cross-platform UI framework used to build the application  
+- **Dart** – Programming language used for Flutter development  
+- **Provider (ChangeNotifier)** – State management for handling cart and product states  
+- **REST API** – Dynamic product data fetched from Fake Store API  
+- **Fake Store API** – https://fakestoreapi.com/products
+
+---
+
 ## 🚀 Installation
 
 Clone the repository and install dependencies:
