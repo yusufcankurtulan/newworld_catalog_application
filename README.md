@@ -11,9 +11,9 @@ New World Catalog App is a modern and user-friendly e-commerce application devel
 - **20% Discount System**: Automatically applying a 20% discount to products added to the cart
 - **Smart Cart**:
 
-- Adding/removing/deleting products
-- Discount and savings calculation
-- Displaying the total savings amount
+ Adding/removing/deleting products
+ Discount and savings calculation
+ Displaying the total savings amount
 - **Savings Display**:
 
 - Unit discount amount
