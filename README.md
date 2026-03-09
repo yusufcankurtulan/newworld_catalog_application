@@ -1,18 +1,40 @@
-# catalog_application
+# New World 
 
-A new Flutter project.
+A catalog applicaton.
 
-## Getting Started
+# About New World
 
-This project is a starting point for a Flutter application.
+New World Catalog App is a modern and user-friendly e-commerce application developed with Flutter. The app allows you to list products, view their details, and add them to your cart.
 
-A few resources to get you started if this is your first Flutter project:
+- **Product Catalog**: Dynamically listing products from the API
+- **Product Details**: Displaying full information about the selected product
+- **20% Discount System**: Automatically applying a 20% discount to products added to the cart
+- **Smart Cart**:
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Adding/removing/deleting products
+- Discount and savings calculation
+- Displaying the total savings amount
+- **Savings Display**:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# newworld_catalog_application
+- Unit discount amount
+- Total savings percentage
+- Comparison of original and discounted prices
+- **Modern UI**: Gradient AppBar, Card-based product design, smooth animations
+
+## 🚀 Installation and Operation
+
+```bash
+# Install project dependencies
+flutter pub get
+
+# Run the application
+flutter run
+```
+
+## 📦 Technology Stack
+
+- **Framework**: Flutter 3.41.2
+- **Language**: Dart
+- **State Management**: ChangeNotifier (Provider Pattern)
+- **API**: Dynamic product data https://fakestoreapi.com/products
+
