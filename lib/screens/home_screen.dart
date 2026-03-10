@@ -36,9 +36,7 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                          builder: (_) => const CartScreen(),
-                        ),
+                        MaterialPageRoute(builder: (_) => const CartScreen()),
                       );
                     },
                   ),
@@ -82,6 +80,7 @@ class HomeScreen extends StatelessWidget {
                   image: AssetImage('assets/images/sepette.png'),
                   fit: BoxFit.cover,
                 ),
+                borderRadius: BorderRadius.circular(12),
               ),
             ),
           ),
