@@ -1,18 +1,66 @@
-# catalog_application
+# 🛍️ New World Catalog App
 
-A new Flutter project.
+A modern and user-friendly **e-commerce catalog application** developed with Flutter.
 
-## Getting Started
+The application allows users to browse products, view detailed product information, and add items to a shopping cart with an automatically applied discount system.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📱 About the Project
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+**New World Catalog App** is designed to demonstrate a clean mobile architecture and modern UI patterns using Flutter.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# newworld_catalog_application
+Products are fetched dynamically from an API and displayed in a smooth, card-based interface. Users can explore product details and manage a smart shopping cart that automatically calculates discounts and savings.
+
+---
+
+## ✨ Features
+
+### 📦 Product Catalog
+- Dynamically fetches products from an API
+- Displays products in a modern card-based layout
+
+### 🔍 Product Details
+- Shows complete product information
+- Includes price, description, and category
+
+### 💸 20% Discount System
+- Automatically applies a **20% discount** to products added to the cart
+
+### 🛒 Smart Cart
+- Add products to the cart
+- Remove products from the cart
+- Delete items completely
+- Automatic discount and savings calculation
+
+### 📊 Savings Display
+- Unit discount amount
+- Total savings percentage
+- Comparison between original and discounted prices
+
+### 🎨 Modern UI
+- Gradient AppBar
+- Card-based product design
+- Smooth UI animations
+- Clean and minimal layout
+
+---
+
+## 🧰 Technology Stack
+
+- **Flutter 3.41.2** – Cross-platform UI framework used to build the application  
+- **Dart** – Programming language used for Flutter development  
+- **Provider (ChangeNotifier)** – State management for handling cart and product states  
+- **REST API** – Dynamic product data fetched from Fake Store API  
+- **Fake Store API** – https://fakestoreapi.com/products
+
+---
+
+## 🚀 Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/yourusername/new-world-catalog.git
+cd new-world-catalog
+flutter pub get
