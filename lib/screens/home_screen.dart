@@ -58,7 +58,55 @@ class _HomeScreenState extends State<HomeScreen> {
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
+<<<<<<< HEAD
         actions: [],
+=======
+        actions: [
+          AnimatedBuilder(
+            animation: cart,
+            builder: (context, _) {
+              return Stack(
+                alignment: Alignment.center,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.shopping_cart),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (_) => const CartScreen()),
+                      );
+                    },
+                  ),
+                  if (cart.totalItems > 0)
+                    Positioned(
+                      right: 8,
+                      top: 8,
+                      child: Container(
+                        padding: const EdgeInsets.all(4),
+                        decoration: const BoxDecoration(
+                          color: Colors.red,
+                          shape: BoxShape.circle,
+                        ),
+                        constraints: const BoxConstraints(
+                          minWidth: 18,
+                          minHeight: 18,
+                        ),
+                        child: Text(
+                          cart.totalItems.toString(),
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 11,
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              );
+            },
+          ),
+        ],
+>>>>>>> ea72cf853634d1f8c10cc5058968ba9e0a2a219e
       ),
       body: Column(
         children: [
@@ -81,9 +129,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   borderRadius: BorderRadius.circular(12),
                   borderSide: BorderSide.none,
                 ),
+<<<<<<< HEAD
                 filled: true,
                 fillColor: Colors.grey[100],
                 contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+=======
+                borderRadius: BorderRadius.circular(12),
+>>>>>>> ea72cf853634d1f8c10cc5058968ba9e0a2a219e
               ),
             ),
           ),

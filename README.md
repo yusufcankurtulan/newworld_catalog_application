@@ -61,6 +61,6 @@ Products are fetched dynamically from an API and displayed in a smooth, card-bas
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/new-world-catalog.git
-cd new-world-catalog
+git clone https://github.com/yusufcankurtulan/newworld_catalog_application.git
+cd newworld_catalog_application
 flutter pub get
