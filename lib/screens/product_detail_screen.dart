@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../models/product.dart';
 import '../models/cart_model.dart';
-import 'cart_screen.dart';
+import '../services/currency_service.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   final Product product;
@@ -24,19 +24,7 @@ class ProductDetailScreen extends StatelessWidget {
           fontWeight: FontWeight.bold,
           color: Colors.white,
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.shopping_cart),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (_) => const CartScreen(),
-                ),
-              );
-            },
-          ),
-        ],
+        actions: [],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
@@ -61,23 +49,35 @@ class ProductDetailScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Row(
               children: [
-                Text(
-                  '${product.price.toStringAsFixed(2)} \$',
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                    decoration: TextDecoration.lineThrough,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Text(
-                  '${(product.price * 0.8).toStringAsFixed(2)} \$',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    color: Colors.red,
-                    fontWeight: FontWeight.bold,
-                  ),
+                ValueListenableBuilder<String>(
+                  valueListenable: CurrencyService.currencyNotifier,
+                  builder: (context, currency, _) {
+                    final sym = CurrencyService.symbol();
+                    final rate = CurrencyService.convert(product.price);
+                    final discounted = CurrencyService.convert(product.price * 0.8);
+                    return Row(
+                      children: [
+                        Text(
+                          '${rate.toStringAsFixed(2)} $sym',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w600,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                        const SizedBox(width: 12),
+                        Text(
+                          '${discounted.toStringAsFixed(2)} $sym',
+                          style: const TextStyle(
+                            fontSize: 18,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    );
+                  },
                 ),
                 const SizedBox(width: 8),
                 Container(
@@ -87,7 +87,7 @@ class ProductDetailScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                   ),
                   child: const Text(
-                    '%20 İndirim',
+                    '%20 Discount',
                     style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
@@ -106,8 +106,8 @@ class ProductDetailScreen extends StatelessWidget {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                      'Ürün sepete eklendi! %20 İndirim uygulandı.\n'
-                      'Yeni fiyat: ${(product.price * 0.8).toStringAsFixed(2)} \$',
+                      'Product added to cart! %20 discount applied.\n'
+                        'New price: ${CurrencyService.convert(product.price * 0.8).toStringAsFixed(2)} ${CurrencyService.symbol()}',
                     ),
                     duration: const Duration(seconds: 2),
                     backgroundColor: Colors.green,
@@ -115,7 +115,7 @@ class ProductDetailScreen extends StatelessWidget {
                 );
               },
               icon: const Icon(Icons.shopping_cart),
-              label: const Text('Sepete Ekle'),
+              label: const Text('Add to Cart'),
             ),
           ],
         ),
