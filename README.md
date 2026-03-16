@@ -8,9 +8,9 @@ The application allows users to browse products, view detailed product informati
 
 ## 📱 About the Project
 
-**New World Catalog App** is designed to demonstrate a clean mobile architecture and modern UI patterns using Flutter.
+**New World Catalog App is designed to demonstrate a clean mobile architecture and modern UI patterns using Flutter. Products are fetched dynamically from an API and displayed in a smooth, card-based interface. Users can explore product details and manage a smart shopping cart that automatically calculates discounts and savings.
 
-Products are fetched dynamically from an API and displayed in a smooth, card-based interface. Users can explore product details and manage a smart shopping cart that automatically calculates discounts and savings.
+The application also includes a simple authentication flow. Users are required to create an account and log in before accessing the app. For demonstration purposes, user credentials are stored locally on the device rather than using a remote authentication service.
 
 ---
 
